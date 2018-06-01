@@ -83,7 +83,7 @@ export function getCharacters() {
     }
 
     dispatch(getCharactersRequested())
-    dispatch(getCharactersSuccess(marvelResponse.data.results))
+    dispatch(getCharactersSuccess(marvelResponse.data))
   }
 }
 

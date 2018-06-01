@@ -3,6 +3,7 @@ import { Scene, Router, TabBar, Icon } from "react-native-router-flux"
 import configureStore from "./store/store"
 import { Provider } from "react-redux"
 
+const store = configureStore({})
 /*
  * Containers (Views)
  */

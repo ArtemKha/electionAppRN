@@ -14,6 +14,10 @@ class WelcomeContainer extends Component {
     this.handleSubmit = this.handleSubmit.bind(this)
   }
 
+  handleSubmit(teamName) {
+    this.props.Actions.setTeamName(teamName)
+  }
+
   render() {
     return (
       <View style={styles.container}>
@@ -34,4 +38,10 @@ const styles = StyleSheet.create({
   }
 })
 
-export default WelcomeContainer
+function mapDispatchToProps(dispatch) {
+  return {
+    Actions: bindActionCreators(ActionCreators, dispatch)
+  }
+}
+
+export default connect(null, mapDispatchToProps)(WelcomeContainer)

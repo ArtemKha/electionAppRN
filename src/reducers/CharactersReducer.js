@@ -11,6 +11,14 @@ export default function CharactersReducer(
   action
 ) {
   switch (action.type) {
+    case GET_CHARACTERS_REQUESTED:
+      return { ...state, isLoading: true }
+    case GET_CHARACTERS_SUCCESS:
+      return {
+        ...state,
+        isLoading: false,
+        items: convertMarvelResponse(action.payload.characters)
+      }
     case SKIP:
     case SELECT:
       let filteredItems = state.items
@@ -34,15 +42,9 @@ function convertMarvelResponse(characters) {
   let normalizedObj = {}
 
   characters.results.forEach(character => {
-    let formattedUri =
-      character.thumbnail.path +
-      "/portrait_fantastic" +
-      "." +
-      character.thumbnail.extension
-    formattedUri = formattedUri.replace("http", "https")
     normalizedObj[character.id] = {
       id: character.id,
-      thumbnail: formattedUri,
+      thumbnail: character.thumbnail.path,
       name: character.name
     }
   })
