@@ -7,7 +7,7 @@ import {Text} from 'react-native'
 const Tab = ({selected, title}) => {
 
   let defaultStyles = {
-    color: selected ? 'red' :'black',
+    color: selected ? 'green' :'black',
     alignItems: 'flex-start',
     fontSize: 12,
     marginBottom: -6,
