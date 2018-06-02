@@ -41,10 +41,24 @@ export default function CharactersReducer(
 function convertMarvelResponse(characters) {
   let normalizedObj = {}
 
+  // characters.results.forEach(character => {
+  //   normalizedObj[character.id] = {
+  //     id: character.id,
+  //     thumbnail: character.thumbnail.path,
+  //     name: character.name
+  //   }
+  // })
+
   characters.results.forEach(character => {
+    let formattedUri =
+      character.thumbnail.path +
+      "/portrait_fantastic" +
+      "." +
+      character.thumbnail.extension
+    formattedUri = formattedUri.replace("http", "https")
     normalizedObj[character.id] = {
       id: character.id,
-      thumbnail: character.thumbnail.path,
+      thumbnail: formattedUri,
       name: character.name
     }
   })
