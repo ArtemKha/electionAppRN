@@ -3,7 +3,8 @@ This project was bootstrapped with [Create React Native App](https://github.com/
 To run the app you need to add configs.js file to /src folder with PUBLIC_KEY and PRIVATE_KEY.
 (to get them go to https://developer.marvel.com/docs)
 
-![](https://image.ibb.co/hjDmTJ/ezgif_com_video_to_gif.gif)
+<a href="#"><img src="https://i.imgflip.com/2bh7h5.gif" title="RN app"/></a>
+
 
 Below you'll find information about performing common tasks. The most recent version of this guide is available [here](https://github.com/react-community/create-react-native-app/blob/master/react-native-scripts/template/README.md).
 
